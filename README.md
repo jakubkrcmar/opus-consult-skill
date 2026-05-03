@@ -61,6 +61,7 @@ scripts/opus_consult.sh --effort medium --read-only --read-dir /path/to/repo --p
 
 - Default is no tools: Opus only sees the prompt content you provide.
 - Use `--read-only --read-dir <path>` only when file inspection is materially useful.
+- Read scope is directory-based; for file-specific reviews, pass the narrowest containing directory and name the relevant files in the prompt, or paste excerpts when that directory is too broad or sensitive.
 - Never include secrets, credentials, private dumps, full home directories, or unrelated client data.
 - Treat Opus output as advisory evidence, not authority.
 

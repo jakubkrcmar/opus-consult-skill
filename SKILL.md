@@ -37,6 +37,7 @@ Set reasoning effort by task:
 - Default is no tools. Opus sees only the prompt content you provide.
 - Use `--read-only --read-dir <dir>` to allow only Claude Code `Read`, `Glob`, `Grep`, and `LS` tools inside explicit directories.
 - Prefer one narrow `--read-dir` over a broad repo root; never include secrets, credentials, private dumps, full home directories, or unrelated client data.
+- Read scope is directory-based; for file-specific reviews, pass the narrowest containing directory and name the relevant files in the prompt, or paste excerpts when that directory is too broad or sensitive.
 - Tell Opus which files to inspect in the prompt; do not rely on broad autonomous browsing.
 - Report that read-only tools were enabled and list the read scope in your synthesis.
 
