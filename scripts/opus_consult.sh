@@ -204,7 +204,11 @@ else
   )"
 fi
 
-READ_DIRS_TEXT="$(printf "%s\n" "${READ_DIRS[@]}")"
+if [[ ${#READ_DIRS[@]} -gt 0 ]]; then
+  READ_DIRS_TEXT="$(printf "%s\n" "${READ_DIRS[@]}")"
+else
+  READ_DIRS_TEXT=""
+fi
 printf '%s\n' "$json" | OPUS_CONSULT_MODEL="$MODEL" OPUS_CONSULT_BUDGET="$BUDGET" OPUS_CONSULT_SESSION_FILE="$SESSION_FILE" OPUS_CONSULT_READ_ONLY="$READ_ONLY" OPUS_CONSULT_READ_DIRS="$READ_DIRS_TEXT" python3 -c '
 import json
 import os
