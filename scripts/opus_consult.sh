@@ -2,7 +2,7 @@
 set -euo pipefail
 
 MODEL="claude-opus-4-7"
-EFFORT="medium"
+EFFORT="xhigh"
 BUDGET="20"
 PROMPT_FILE=""
 SESSION_FILE=""
@@ -28,7 +28,7 @@ usage() {
 Usage: opus_consult.sh [--prompt-file PATH] [--session-file PATH] [--effort low|medium|high|xhigh|max] [--budget USD] [--read-only] [--read-dir PATH] [--bare] [--dry-run]
 
 Reads prompt from --prompt-file or stdin. Calls Claude Code Opus 4.7 with tools disabled by
-default, JSON output, and a default $20 runaway-spend cap. Add --read-only plus one or more
+default, xhigh effort, JSON output, and a default $20 runaway-spend cap. Add --read-only plus one or more
 --read-dir PATH values to allow Claude read/search/list access only (Read, Glob, Grep, LS)
 inside those directories. One-shot calls disable session persistence. Threaded calls use
 --session-file to keep a bounded resumable Opus conversation. Default auth is the existing

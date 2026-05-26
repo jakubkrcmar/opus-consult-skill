@@ -10,7 +10,7 @@ The skill keeps Opus consults deliberate: smallest safe context by default, tool
 - Defaults to one-shot prompts with no tools and no session persistence.
 - Supports bounded threaded follow-ups through a local session file.
 - Supports optional read-only file inspection with explicit `--read-dir` scope.
-- Reports cost, model usage, token counts, duration, and errors.
+- Reports cost, model usage, token counts, duration, errors, and whether read-only/session scope was used.
 
 ## Requirements
 
@@ -51,11 +51,14 @@ Use opus-consult to get a second opinion on this architecture decision.
 You can also run the helper directly from the skill directory:
 
 ```bash
-printf '%s\n' "Question for Opus..." | scripts/opus_consult.sh --effort medium
-scripts/opus_consult.sh --dry-run --effort medium --prompt-file /path/to/prompt.txt
-scripts/opus_consult.sh --effort high --prompt-file /path/to/prompt.txt
-scripts/opus_consult.sh --effort medium --read-only --read-dir /path/to/repo --prompt-file /path/to/prompt.txt
+printf '%s\n' "Question for Opus..." | scripts/opus_consult.sh
+scripts/opus_consult.sh --dry-run --prompt-file /path/to/prompt.txt
+scripts/opus_consult.sh --prompt-file /path/to/prompt.txt
+scripts/opus_consult.sh --read-only --read-dir /path/to/repo --prompt-file /path/to/prompt.txt
+scripts/opus_consult.sh --session-file /path/to/topic.session --prompt-file /path/to/followup.txt
 ```
+
+The helper defaults to `claude-opus-4-7`, `xhigh` effort, JSON output, tools disabled, no session persistence, and a `$20` runaway-spend cap. Use `--effort high` or `--effort medium` only when speed/cost matters more than the default quality setting.
 
 ## Safety Model
 
