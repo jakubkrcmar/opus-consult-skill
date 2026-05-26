@@ -68,6 +68,14 @@ The helper defaults to `claude-opus-4-7`, `xhigh` effort, JSON output, tools dis
 - Never include secrets, credentials, private dumps, full home directories, or unrelated client data.
 - Treat Opus output as advisory evidence, not authority.
 
+## Changelog
+
+### 2026-05-26
+
+- Defaulted Opus consults to `xhigh` effort for higher-quality second opinions.
+- Tightened the skill contract around smallest safe context, advisory-only output, and explicit read-only scope.
+- Updated the helper examples and receipt guidance for threaded sessions, read dirs, and cost/usage reporting.
+
 ## License
 
 MIT
