@@ -23,7 +23,7 @@ The skill keeps Opus consults deliberate: smallest safe context by default, tool
 Clone the repo into your skills directory:
 
 ```bash
-git clone <repo-url> ~/.codex/skills/opus-consult
+git clone https://github.com/jakubkrcmar/opus-consult-skill.git ~/.codex/skills/opus-consult
 ```
 
 Or copy the folder manually so the layout is:
